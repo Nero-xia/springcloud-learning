@@ -45,6 +45,7 @@ public class UserController {
     @GetMapping("/getByUsername")
     public CommonResult<User> getByUsername(@RequestParam String username) {
         User user = userService.getByUsername(username);
+        LOGGER.info("根据getByUsername获取用户信息，用户列表为：{}",user);
         return new CommonResult<>(user);
     }
 
